@@ -522,6 +522,55 @@ variable "tetrate_istio_gateway_helm_config" {
   default     = {}
 }
 
+#-----------ISTIO-------------
+variable "enable_istio" {
+  description = "Enable Istio add-on"
+  type        = bool
+  default     = false
+}
+
+variable "istio_version" {
+  description = "Istio version"
+  type        = string
+  default     = "1.15.1"
+}
+
+variable "istio_install_base" {
+  description = "Install Istio `base` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "istio_install_istiod" {
+  description = "Install Istio `istiod` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "istio_install_gateway" {
+  description = "Install Istio `gateway` Helm Chart"
+  type        = bool
+  default     = true
+}
+
+variable "istio_base_helm_config" {
+  description = "Istio `base` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "istio_istiod_helm_config" {
+  description = "Istio `istiod` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
+variable "istio_gateway_helm_config" {
+  description = "Istio `gateway` Helm Chart config"
+  type        = any
+  default     = {}
+}
+
 #-----------THANOS-------------
 variable "enable_thanos" {
   description = "Enable Thanos add-on"

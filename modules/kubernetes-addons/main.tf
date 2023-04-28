@@ -473,6 +473,22 @@ module "tetrate_istio" {
   addon_context        = local.addon_context
 }
 
+module "istio" {
+  source = "./istio"
+
+  count = var.enable_istio ? 1 : 0
+
+  distribution_version = var.istio_version
+  install_base         = var.istio_install_base
+  install_istiod       = var.istio_install_istiod
+  install_gateway      = var.istio_install_gateway
+  base_helm_config     = var.istio_base_helm_config
+  istiod_helm_config   = var.istio_istiod_helm_config
+  gateway_helm_config  = var.istio_gateway_helm_config
+  manage_via_gitops    = var.argocd_manage_add_ons
+  addon_context        = local.addon_context
+}
+
 module "thanos" {
   count             = var.enable_thanos ? 1 : 0
   source            = "./thanos"

@@ -25,6 +25,7 @@ locals {
     sparkHistoryServer        = var.enable_spark_history_server ? module.spark_history_server[0].argocd_gitops_config : null
     sparkOperator             = var.enable_spark_k8s_operator ? module.spark_k8s_operator[0].argocd_gitops_config : null
     tetrateIstio              = var.enable_tetrate_istio ? module.tetrate_istio[0].argocd_gitops_config : null
+    istio                     = var.enable_istio ? module.istio[0].argocd_gitops_config : null
     traefik                   = var.enable_traefik ? module.traefik[0].argocd_gitops_config : null
     vault                     = var.enable_vault ? module.vault[0].argocd_gitops_config : null
     vpa                       = var.enable_vpa ? module.vpa[0].argocd_gitops_config : null
