@@ -16,8 +16,6 @@ module "istiod" {
   manage_via_gitops = var.manage_via_gitops
   helm_config       = local.istiod_helm_config
   addon_context     = var.addon_context
-
-  depends_on = [module.cni]
 }
 
 module "gateway" {
